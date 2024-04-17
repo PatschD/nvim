@@ -13,6 +13,13 @@ return {
   },
 
   {
+    "j-hui/fidget.nvim",
+    opts = {
+      -- options
+    },
+  },
+
+  {
     "L3MON4D3/LuaSnip",
     keys = function()
       return {}
