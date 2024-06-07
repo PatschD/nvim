@@ -17,7 +17,6 @@ require("lazy").setup({
     -- { import = "lazyvim.plugins.extras.lang.typescript" },
     -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
     -- import/override with your plugins
-    { import = "lazyvim.plugins.extras.coding.copilot" },
     -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
     { import = "lazyvim.plugins.extras.formatting.black" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
@@ -31,7 +30,8 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.markdown" },
     { import = "lazyvim.plugins.extras.lang.tailwind" },
 
-    { import = "lazyvim.plugins.extras.linting.eslint" },
+    { import = "lazyvim.plugins.extras.lang.svelte" },
+    { import = "lazyvim.plugins.extras.coding.codeium" },
 
     { import = "lazyvim.plugins.extras.editor.harpoon2" },
 
