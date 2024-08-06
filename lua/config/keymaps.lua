@@ -24,3 +24,10 @@ end
 
 vim.keymap.set("n", "<C-t>", lazyterm, { desc = "Terminal (Root Dir)" })
 vim.keymap.set("t", "<C-t>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+
+vim.api.nvim_set_keymap(
+  "n",
+  "<leader>qd",
+  '<cmd>call setqflist(filter(getqflist(), {idx -> idx != line(".")-1}))<CR>',
+  { noremap = true, silent = true }
+)
