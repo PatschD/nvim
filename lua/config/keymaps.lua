@@ -14,7 +14,8 @@ vim.keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
 
 vim.keymap.set("n", "<Leader>a", ":w<CR>", opts)
 
--- vim.keymap.set("n", "<Space>lg", "<cmd>lua require('zippy').insert_print()<CR>")
+-- vim.keymap.set("n", "<Leader>gt", "<cmd>lua require('println').todo()<CR>")
+vim.keymap.set("n", "<Leader>gt", "<cmd>Lazy reload println.nvim<CR>")
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- floating terminal

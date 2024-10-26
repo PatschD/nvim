@@ -2,11 +2,11 @@ return {
   {
     "stevearc/oil.nvim",
     opts = {
-      -- columns = {
-      --   "icon",
-      --   "size",
-      --   -- "mtime",
-      -- },
+      columns = {
+        "icon",
+        "size",
+        "mtime",
+      },
       view_options = {
         show_hidden = true,
       },
@@ -14,6 +14,7 @@ return {
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
+  { "rose-pine/neovim", name = "rose-pine" },
   {
     "ibhagwan/fzf-lua",
     keys = {
