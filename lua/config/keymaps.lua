@@ -20,11 +20,20 @@ vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- floating terminal
 local lazyterm = function()
-  LazyVim.terminal(nil, { cwd = LazyVim.root() })
+  -- LazyVim.terminal(nil, { cwd = LazyVim.root() })
+  Snacks.terminal()
 end
 
 vim.keymap.set("n", "<C-t>", lazyterm, { desc = "Terminal (Root Dir)" })
 vim.keymap.set("t", "<C-t>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+
+vim.keymap.del("n", "<C-/>")
+vim.keymap.del("t", "<C-/>")
+vim.keymap.del("n", "<C-_>")
+vim.keymap.del("t", "<C-_>")
+
+-- vim.keymap.set("n", "<C-t>", lazyterm, { desc = "Terminal (Root Dir)" })
+-- vim.keymap.set("t", "<C-t>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 
 vim.api.nvim_set_keymap(
   "n",
