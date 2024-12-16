@@ -15,7 +15,7 @@ vim.keymap.set("n", "<S-h>", ":bprevious<CR>", opts)
 vim.keymap.set("n", "<Leader>a", ":w<CR>", opts)
 
 -- vim.keymap.set("n", "<Leader>gt", "<cmd>lua require('println').todo()<CR>")
-vim.keymap.set("n", "<Leader>gt", "<cmd>Lazy reload println.nvim<CR>")
+-- vim.keymap.set("n", "<Leader>gt", "<cmd>Lazy reload println.nvim<CR>")
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 -- floating terminal
@@ -35,6 +35,7 @@ vim.keymap.del("t", "<C-_>")
 -- vim.keymap.set("n", "<C-t>", lazyterm, { desc = "Terminal (Root Dir)" })
 -- vim.keymap.set("t", "<C-t>", "<cmd>close<cr>", { desc = "Hide Terminal" })
 
+-- quickfux stuff
 vim.api.nvim_set_keymap(
   "n",
   "<leader>qd",
