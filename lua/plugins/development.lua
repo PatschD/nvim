@@ -1,3 +1,3 @@
 return {
-  dir = "/Users/dapats/Desktop/programming/plugin/println.nvim",
+  -- dir = "/Users/dapats/Desktop/programming/plugin/println.nvim",
 }

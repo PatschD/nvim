@@ -42,3 +42,5 @@ vim.api.nvim_set_keymap(
   '<cmd>call setqflist(filter(getqflist(), {idx -> idx != line(".")-1}))<CR>',
   { noremap = true, silent = true }
 )
+
+vim.api.nvim_set_keymap("n", "q:", ":q<CR>", { noremap = true, silent = true })
