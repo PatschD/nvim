@@ -14,7 +14,6 @@ return {
     -- Optional dependencies
     dependencies = { "nvim-tree/nvim-web-devicons" },
   },
-  { "rose-pine/neovim", name = "rose-pine" },
   {
     "ibhagwan/fzf-lua",
     keys = {
@@ -41,27 +40,27 @@ return {
       inlay_hints = { enabled = false },
     },
   },
-
-  {
-    "telescope.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
-    },
-  },
-  {
-    "andrewferrier/debugprint.nvim",
-    opts = {},
-    dependencies = {
-      "echasnovski/mini.nvim", -- Needed to enable :ToggleCommentDebugPrints for NeoVim 0.9
-    },
-    -- Remove the following line to use development versions,
-    -- not just the formal releases
-    version = "*",
-  },
+  --
+  -- {
+  --   "telescope.nvim",
+  --   dependencies = {
+  --     "nvim-telescope/telescope-fzf-native.nvim",
+  --     build = "make",
+  --     config = function()
+  --       require("telescope").load_extension("fzf")
+  --     end,
+  --   },
+  -- },
+  -- {
+  --   "andrewferrier/debugprint.nvim",
+  --   opts = {},
+  --   dependencies = {
+  --     "echasnovski/mini.nvim", -- Needed to enable :ToggleCommentDebugPrints for NeoVim 0.9
+  --   },
+  --   -- Remove the following line to use development versions,
+  --   -- not just the formal releases
+  --   version = "*",
+  -- },
 
   {
     "dstein64/vim-startuptime",
