@@ -7,6 +7,7 @@
 local opts = { silent = true }
 
 vim.keymap.set("i", "jk", "<ESC>", opts)
+vim.keymap.set("i", "jj", "<ESC>", opts)
 
 -- Navigate buffers
 vim.keymap.set("n", "<S-l>", ":bnext<CR>", opts)
