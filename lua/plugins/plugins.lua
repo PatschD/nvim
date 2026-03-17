@@ -5,8 +5,21 @@ return {
     lazy = false,
     priority = 1000,
   },
-  { "mistricky/codesnap.nvim", build = "make" },
   { "sindrets/diffview.nvim" },
+
+  {
+    "3rd/image.nvim",
+    config = function()
+      require("image").setup({
+        backend = "kitty",
+        integrations = {
+          markdown = { enabled = true },
+        },
+        kitty_method = "normal",
+        hijack_file_patterns = { "*.png", "*.jpg", "*.jpeg", "*.gif", "*.webp", "*.svg" },
+      })
+    end,
+  },
 
   {
     "stevearc/oil.nvim",
@@ -15,6 +28,9 @@ return {
         "icon",
         "size",
         "mtime",
+      },
+      preview_win = {
+        preview_method = "load",
       },
       view_options = {
         show_hidden = true,
