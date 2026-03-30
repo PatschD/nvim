@@ -256,11 +256,17 @@ require('mason-lspconfig').setup({
 vim.api.nvim_create_autocmd('FileType', {
   callback = function(ev)
     local lang = vim.treesitter.language.get_lang(ev.match)
-    if lang then
-      if not pcall(vim.treesitter.language.inspect, lang) then
-        require('nvim-treesitter').install({ lang })
-      end
-      pcall(vim.treesitter.start)
+    if not lang then return end
+    if pcall(vim.treesitter.language.inspect, lang) then
+      vim.treesitter.start(ev.buf)
+      return
+    end
+    -- Only install if nvim-treesitter actually has a grammar for this language
+    local ok, parsers = pcall(require, 'nvim-treesitter.parsers')
+    if ok and parsers[lang] then
+      require('nvim-treesitter').install({ lang }):wait(function()
+        pcall(vim.treesitter.start, ev.buf)
+      end)
     end
   end,
 })
