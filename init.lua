@@ -240,7 +240,7 @@ require('mason-lspconfig').setup({
     'lua_ls',
     'gopls',
     'pyright',
-    'ts_ls',
+    'vtsls',
     'svelte',
     'clangd',
     'tailwindcss',
