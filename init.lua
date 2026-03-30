@@ -64,15 +64,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, o)
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, o)
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, o)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, o)
+    vim.keymap.set('n', 'gi', '<cmd>FzfLua lsp_implementations<cr>', o)
+    vim.keymap.set('n', 'gr', '<cmd>FzfLua lsp_references<cr>', o)
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, o)
     vim.keymap.set('n', '<Leader>rn', vim.lsp.buf.rename, o)
-    vim.keymap.set('n', '<Leader>ca', vim.lsp.buf.code_action, o)
+    vim.keymap.set('n', '<Leader>ca', '<cmd>FzfLua lsp_code_actions<cr>', o)
     vim.keymap.set('n', '<Leader>f', function() vim.lsp.buf.format({ async = true }) end, o)
     vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end, o)
     vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end, o)
     vim.keymap.set('n', '<Leader>e', vim.diagnostic.open_float, o)
+    vim.keymap.set('n', '<Leader>cd', vim.diagnostic.open_float, o)
 
     -- Completion handled by blink.cmp
   end,
@@ -122,6 +123,7 @@ vim.pack.add({
   'https://github.com/folke/todo-comments.nvim',
   'https://github.com/folke/flash.nvim',
   'https://github.com/sindrets/diffview.nvim',
+  'https://github.com/neovim/nvim-lspconfig',
 })
 
 -- Colorscheme
@@ -131,6 +133,7 @@ vim.cmd.colorscheme('kanagawa')
 require('which-key').setup()
 
 -- Fzf-lua (fuzzy finder)
+require('fzf-lua').register_ui_select()
 require('fzf-lua').setup({
   keymap = {
     fzf = {
