@@ -59,7 +59,6 @@ vim.keymap.set('n', '<Leader>xX', '<cmd>Trouble diagnostics toggle filter.buf=0<
 -- LSP keymaps + native completion (attached per buffer)
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(ev)
-    local client = vim.lsp.get_client_by_id(ev.data.client_id)
     local o = { buffer = ev.buf, silent = true }
 
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, o)
