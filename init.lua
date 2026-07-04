@@ -78,7 +78,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			vim.diagnostic.jump({ count = 1, float = true })
 		end, o)
 		vim.keymap.set("n", "<Leader>e", vim.diagnostic.open_float, o)
-		vim.keymap.set("n", "<Leader>cd", vim.diagnostic.open_float, o)
 
 		-- Completion handled by blink.cmp
 	end,
