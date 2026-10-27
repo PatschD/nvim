@@ -135,6 +135,8 @@ vim.pack.add({
 	"https://github.com/sindrets/diffview.nvim",
 	"https://github.com/neovim/nvim-lspconfig",
 	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
+	"https://github.com/brianhuster/live-preview.nvim",
+	"https://github.com/folke/snacks.nvim",
 })
 
 -- Colorscheme
@@ -167,6 +169,18 @@ require("oil").setup({
 	view_options = { show_hidden = true },
 })
 vim.keymap.set("n", "-", "<cmd>Oil<cr>", { desc = "Open parent directory" })
+
+-- Snacks image (opening an image file shows the picture; kitty graphics in Ghostty, through tmux)
+-- formats is snacks' default list plus svg, which ImageMagick converts
+require("snacks").setup({
+	image = {
+		enabled = true,
+		formats = {
+			"png", "jpg", "jpeg", "gif", "bmp", "webp", "tiff", "heic", "avif",
+			"mp4", "mov", "avi", "mkv", "webm", "pdf", "icns", "svg",
+		},
+	},
+})
 
 -- Completion (blink.cmp)
 require("blink.cmp").setup({
@@ -250,6 +264,14 @@ vim.keymap.set("n", "<Leader>xt", "<cmd>Trouble todo toggle<cr>", { desc = "TODO
 
 -- Trouble
 require("trouble").setup()
+
+-- Live preview (markdown/HTML in the browser, live scroll sync)
+require("livepreview.config").set({
+	picker = "fzf-lua",
+})
+vim.keymap.set("n", "<Leader>mp", "<cmd>LivePreview start<cr>", { desc = "Markdown/HTML live preview" })
+vim.keymap.set("n", "<Leader>mc", "<cmd>LivePreview close<cr>", { desc = "Close live preview" })
+vim.keymap.set("n", "<Leader>mf", "<cmd>LivePreview pick<cr>", { desc = "Pick file to preview" })
 
 -- Mason
 require("mason").setup()
